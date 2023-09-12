@@ -30,11 +30,7 @@ export default function Home() {
           gap-3
           mt-4"
           >
-            <ListItem
-              name="Liked Songs"
-              href="liked "
-              image="/images/liked.png"
-            />
+            <ListItem name="Liked Songs" href="liked " image="/images/liked.png" />
           </div>
         </div>
       </Header>
