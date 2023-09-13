@@ -22,9 +22,7 @@ const AuthModal = () => {
   }, [session, router, onClose]);
 
   const onChange = (open: boolean) => {
-    if (!open) {
-      onClose();
-    }
+    if (!open) onClose();
   };
   return (
     <Modal title="fooTitle" description="barDesc" isOpen={isOpen} onChange={onChange}>
