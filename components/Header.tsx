@@ -6,6 +6,8 @@ import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
+import useAuthModal from "@/hooks/useAuthModal";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -14,9 +16,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
+  const authModal = useAuthModal();
+  const supabaseClient = useSupabaseClient();
+
   const handleLogout = () => {
     // logout the user
   };
+
   return (
     <div
       className={twMerge(
@@ -62,17 +68,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           <>
             <div>
               <Button
-                onClick={() => {}}
+                onClick={authModal.onOpen}
                 className="bg-transparent text-neutral-300 font-medium"
               >
                 Sign up
               </Button>
             </div>
             <div>
-              <Button
-                onClick={() => {}}
-                className="bg-white font-bold px-6 py-2"
-              >
+              <Button onClick={authModal.onOpen} className="bg-white font-bold px-6 py-2">
                 Log in
               </Button>
             </div>
