@@ -137,5 +137,3 @@ const UploadModal = () => {
 };
 
 export default UploadModal;
-
-// new row violates row-level security policy for table "songs"
