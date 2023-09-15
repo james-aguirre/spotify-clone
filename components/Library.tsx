@@ -13,11 +13,9 @@ interface LibraryProps {
 }
 
 const Library: React.FC<LibraryProps> = ({ songs }) => {
-  console.log(songs);
   const authModal = useAuthModal();
   const { user } = useUser();
   const uploadModal = useUploadModal();
-  console.log(songs);
   const onClick = () => {
     if (!user) {
       return authModal.onOpen();
