@@ -83,6 +83,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
           <LikeButton songId={song.id} />
         </div>
       </div>
+
       <div className="flex md:hidden col-auto w-full justify-end items-center">
         <div
           onClick={handlePlay}
@@ -132,6 +133,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
         >
           <Icon size={30} className="text-black" />
         </div>
+
         <AiFillStepForward
           size={30}
           className="text-neutral-400 cursor-pointer hover:text-white transition"
