@@ -44,6 +44,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
         .delete()
         .eq("song_id", songId)
         .eq("user_id", user.id);
+      toast.success("Song removed from playlist");
       if (error) {
         toast.error(error.message);
       } else {
@@ -57,7 +58,7 @@ const LikeButton: React.FC<LikeButtonProps> = ({ songId }) => {
         toast.error(error.message);
       } else {
         setIsLiked(true);
-        toast.success("Added to favorites");
+        toast.success("Song added to playlist!");
       }
     }
     router.refresh();
